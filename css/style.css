@@ -73,6 +73,10 @@ header {
 
 /*header */
 
+.header-section {
+    
+}
+
 .site-logo {
     float: left;
     padding: 22px 0px;
@@ -105,7 +109,7 @@ nav {
 nav ul li {
     float: left;
     list-style: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'HelveticaNeueLTPro', sans-serif;
     font-size: 14px;
     position: relative;
     margin-right: 3px;
