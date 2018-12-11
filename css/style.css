@@ -7,6 +7,16 @@ body {
     font-family: 'HelveticaNeueLTPro', sans-serif;
 }
 
+header {
+    position: absolute;
+    transition: all ease 0.3s;
+    z-index: 11;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+
+
 /*preloader */
 
 #preloader {
@@ -92,13 +102,40 @@ nav {
     z-index: 100;
 }
 
-nav ul li{
+nav ul li {
     float: left;
     list-style: none;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     position: relative;
     margin-right: 3px;
+}
+
+nav ul li a {
+    color: #fff;
+    line-height: 72px;
+    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 0 7px;
+    font-weight: 500;    
+}
+
+nav ul li a:after {
+	height: 2px;
+    width: 0;
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    transition: all 0.2s ease-in-out;
+}
+
+nav ul li a:hover:after {
+	width: 100%;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-scroll {
@@ -111,9 +148,26 @@ nav ul li{
     float: right;
     line-height: 32px;
     margin-bottom: 0;
-    width: 100%;
+}
+
+.nav-menu li a:focus {
+    color: #000;
+}
+
+.nav-fixed {
+    position: fixed;
+    transition: all ease 0.3s;
     background: #fff;
-    text-align: center; 
-    overflow: scroll;
-    display: none;
+    border: 0;
+    -webkit-box-shadow: -5px 10px 12px -10px rgba(201,201,201,0.67);
+    -moz-box-shadow: -5px 10px 12px -10px rgba(201,201,201,0.67);
+    box-shadow: -5px 10px 12px -10px rgba(201,201,201,0.67);
+}
+
+.nav-fixed ul li a {
+    color: #000;
+}
+
+.nav-fixed .site-logo {
+    color: #000;
 }
