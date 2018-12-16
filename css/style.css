@@ -737,8 +737,12 @@ article{
 
 .profile img{
     width: 100%;
+    float: right;
 }
 
+.about-info{
+    float: left;
+}
 
 .feature{
     margin-top: 30px;
@@ -1197,6 +1201,7 @@ footer .social a:hover{
     -moz-border-radius: 50px;
     border-radius: 50px;
     color: #fff;
+    background: #ffa700;
     font-weight: 500;
     font-size: 13px;
     transition: all ease 0.3s;
@@ -1229,7 +1234,7 @@ footer .social a:hover{
 
 
 .rakotoson_button:hover, .rakotoson_button:focus, .rakotoson_button:active {
-  color: white;
+  color: #fff;
 }
 .rakotoson_button:hover:before, .rakotoson_button:focus:before, .rakotoson_button:active:before {
   -webkit-transform: scaleX(1);
