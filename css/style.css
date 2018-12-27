@@ -540,7 +540,7 @@ article{
 }
 
 .not_found h2{
-    color: #fff
+    color: #fff;
     font-size: 22px;
     font-weight: 600;
 }
@@ -1046,7 +1046,7 @@ article{
 }
 
 
-/
+
 .owl-carousel .item img{
     width: 100%;
 }
