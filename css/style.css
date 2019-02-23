@@ -828,7 +828,10 @@ article{
 }
 
 
-
+span.bigwhite {
+    font-size: larger;
+    color: white;
+}
 
 /*------------------------ 4 Path ------------------------*/
 
