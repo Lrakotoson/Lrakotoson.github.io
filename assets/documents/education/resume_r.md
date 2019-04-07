@@ -1,23 +1,16 @@
-------------------------------------------------------------------------
 
-------------------------------------------------------------------------
 
-**Manipulation de données - fonctions usuelles de R**
-=====================================================
+# **Manipulation de données - fonctions usuelles de R**
 
-------------------------------------------------------------------------
+## 1. **Données chd**
 
-------------------------------------------------------------------------
-
-1. **Données chd**
-==================
 
 Le fichier **chd.csv** renseigne, sur n = 100 individus, l’âge de l’individu (variable age) et le fait qu’il soit porteur d’une maladie ou non (variable nommée **chd**, codée 1 pour oui, 0 pour non). On s’intéresse à l’influence de l’âge sur le fait d’être porteur ou non de la maladie. L’objet de l’exercice est en particulier de former des classes d’âge (sous forme d’intervalles contigus) et de calculer la proportion de malades dans chacune des classes. On cherche aussi à représenter graphiquement la situation et les résultats obtenus.
 
 Plus généralement, ce type de données peut être utilisé pour essayer de voir si la variable âge (quantitative) permet d’expliquer l’appartenance à l’une des modalités d’une variable binaire (ici variable chd de modalités 1 ou 0). C’est un problème typique de la régression dite logistique. Nous ne rentrons pas ici dans la méthode. Cependant, précisons pour information que la dernière question consiste à appliquer les résultats d’un modèle logistique aux données.
 
-1.1 Exploitation des données
-----------------------------
+### 1.1 Exploitation des données
+
 
 1.  Importer et calculer le résumé des données.
 
@@ -34,7 +27,7 @@ summary(donnees)
     ##  3rd Qu.:55.00   3rd Qu.:1.00  
     ##  Max.   :69.00   Max.   :1.00
 
-1.  Calculer la moyenne de la variable chd. A quoi correspond cette valeur ?
+2.  Calculer la moyenne de la variable chd. A quoi correspond cette valeur ?
 
 ``` r
 mean(donnees$chd)
@@ -42,7 +35,7 @@ mean(donnees$chd)
 
     ## [1] 0.43
 
-1.  La variable chd est interprétée comme quantitative : ajouter aux données une colonne appelée *chd.quali* qui contient la conversion de la variable chd en facteur (fonction **factor()**). Recalculer le résumé des données et retrouver ainsi que 43% des individus sont porteurs de la maladie.
+3.  La variable chd est interprétée comme quantitative : ajouter aux données une colonne appelée *chd.quali* qui contient la conversion de la variable chd en facteur (fonction **factor()**). Recalculer le résumé des données et retrouver ainsi que 43% des individus sont porteurs de la maladie.
 
 ``` r
 chd.quali = factor(donnees$chd, levels = c(0,1), labels = c("sain", "malade"))
@@ -58,7 +51,7 @@ summary(donnees)
     ##  3rd Qu.:55.00   3rd Qu.:1.00              
     ##  Max.   :69.00   Max.   :1.00
 
-1.  Calculer la moyenne d’âge d’un individu malade, d’un individu sain.
+4.  Calculer la moyenne d’âge d’un individu malade, d’un individu sain.
 
 ``` r
 by(donnees$age,donnees$chd.quali,mean)
@@ -70,7 +63,7 @@ by(donnees$age,donnees$chd.quali,mean)
     ## donnees$chd.quali: malade
     ## [1] 51.27907
 
-1.  On se propose de former des classes d’âge puis de calculer la proportion d’individus malades dans chaque classe.
+5.  On se propose de former des classes d’âge puis de calculer la proportion d’individus malades dans chaque classe.
 
 <!-- -->
 
