@@ -67,7 +67,7 @@ by(donnees$age,donnees$chd.quali,mean)
 
 <!-- -->
 
-1.  Utiliser la fonction **cut()** pour regrouper les valeurs d’âge dans les intervalles suivants : <br> **\[20, 29\]  \]29, 34\]  \]34, 39\]  \]39, 44\]  \]44, 49\]  \]49, 45\]  \]54, 59\]  \]59, 69\]**
+**a.**  Utiliser la fonction **cut()** pour regrouper les valeurs d’âge dans les intervalles suivants : <br> **\[20, 29\]  \]29, 34\]  \]34, 39\]  \]39, 44\]  \]44, 49\]  \]49, 45\]  \]54, 59\]  \]59, 69\]**
 
 Indications :<br> + On s’assurera que tous les individus sont bien associés.<br> + On pourra, comme à la question 2, créer une colonne supplémentaire dans le jeu de données, appelée par exemple *age.quali*, qui recevra la classe d’appartenance de chaque individu.
 
@@ -101,7 +101,7 @@ by(donnees$chd, donnees$age.quali, mean) #moyenne de malades par age.quali
     ## donnees$age.quali: (59,69]
     ## [1] 0.8
 
-1.  Calculer la proportion d’individus malades dans chaque classe d’âge.
+**b.**  Calculer la proportion d’individus malades dans chaque classe d’âge.
 
 ``` r
 table(donnees$chd.quali, donnees$age.quali) #effectifs par age.quali
@@ -112,8 +112,9 @@ table(donnees$chd.quali, donnees$age.quali) #effectifs par age.quali
     ##   sain         9      13       9      10       7       3       4       2
     ##   malade       1       2       3       5       6       5      13       8
 
-1.2 Graphe
 ----------
+### 1.2 Graphe
+
 
 1.  Représenter dans un plan les données d’âge en abscisse et celle de la variable quantitative chd en ordonnée, sans oublier de légender les axes.
 
@@ -123,7 +124,7 @@ plot(x = donnees$age, y = donnees$chd, xlab = "age", ylab = "chd")
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
-1.  Ajouter par un trait horizontal en pointillés, la proportion des individus malades (sur l’ensemble des données).
+2.  Ajouter par un trait horizontal en pointillés, la proportion des individus malades (sur l’ensemble des données).
 
 ``` r
 plot(x = donnees$age, y = donnees$chd, xlab = "age", ylab = "chd") # Question 1
@@ -132,7 +133,7 @@ abline(h = mean(donnees$chd), col ="blue", lty = "dotted")
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
-1.  On souhaite ajouter à̀ ce graphe une représentation de la proportion d’individus malades par classe d’âge. Pour cela, on pourra tracer des segments horizontaux de couleur rouge, de bornes correspondantes aux extrémités des classes d’âge, et les placer à la hauteur correspondant à la proportion d’individus malades dans la classe.
+3.  On souhaite ajouter à̀ ce graphe une représentation de la proportion d’individus malades par classe d’âge. Pour cela, on pourra tracer des segments horizontaux de couleur rouge, de bornes correspondantes aux extrémités des classes d’âge, et les placer à la hauteur correspondant à la proportion d’individus malades dans la classe.
 
 ``` r
 plot(x = donnees$age, y = donnees$chd, xlab = "age", ylab = "chd") # Question 1
@@ -147,7 +148,7 @@ segments(x0 = c(20,29,34,39,44,49,54,59),
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-9-1.png)
 
-1.  On considère la fonction f : R → \[0, 1\] telle que
+4.  On considère la fonction f : R → \[0, 1\] telle que
     $$f(x)=\\frac{exp(B\_1 + B\_2 x)} {1 + exp(B\_1 + B\_2 x)}$$
      Représenter sur le graphe la courbe de f pour *B*<sub>1</sub>= −5, 30 et *B*<sub>2</sub> = 0, 11. Cette fonction est le résultat de l’application d’un modèle logistique aux données : *f*(*x*) donne une estimation de la probabilité qu’un individu soit porteur de la maladie à l'âge x.
 
@@ -163,10 +164,9 @@ lines(x,(exp(-5.3 + 0.11*x))/(1+exp(-5.3 + 0.11*x)), col = "blue")
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-10-1.png)
 
-2. **Température de surface de l'océan**
-========================================
+## 2. **Température de surface de l'océan**
 
-Vous disposez de 2 jeux de données de températures de surface de l’océan (en degré Celsius) : données observées et données modélisées. Elles se trouvent dans les fichiers **observations.csv** et **modelise.csv** respectivement. Ces fichiers contiennent des données SST pour 5 régions océaniques proches de la Bretagne : dans la Manche au nord (Manche Nord), et au sud (Manche Sud), en Mer d’Iroise au large (Mer Iroise Zone Large), ou près de la côte (Mer Iroise Zone Côtière) et enfin dans l’Atlantique au large des côtes du Morbihan (Plateau Armoricain). Ces régions sont localisées sur la figure ci-dessous :<br> <img src="temperature_ocean.jpg" alt="Température océan" style="width:50.0%" />
+Vous disposez de 2 jeux de données de températures de surface de l’océan (en degré Celsius) : données observées et données modélisées. Elles se trouvent dans les fichiers **observations.csv** et **modelise.csv** respectivement. Ces fichiers contiennent des données SST pour 5 régions océaniques proches de la Bretagne : dans la Manche au nord (Manche Nord), et au sud (Manche Sud), en Mer d’Iroise au large (Mer Iroise Zone Large), ou près de la côte (Mer Iroise Zone Côtière) et enfin dans l’Atlantique au large des côtes du Morbihan (Plateau Armoricain). Ces régions sont localisées sur la figure ci-dessous :<br> <img src="resume_rgit_files/figure-markdown_github/temperature_ocean.jpg" alt="Température océan" style="width:50.0%" />
 
 **Données observées** Chaque groupe possède les données de Mer Iroise Zone Large et celles d’une autre région. Il y a 5 colonnes :
 <ul>
@@ -200,7 +200,7 @@ observations <- read.csv2("observations.csv")
 modelise <- read.csv2("modelise.csv")
 ```
 
-1.  Dans les données d’observations, changer le nom des deux dernières colonnes : *SST MerIroiseZL* en region1 et *SST Plateau Armor* en region2.
+2.  Dans les données d’observations, changer le nom des deux dernières colonnes : *SST MerIroiseZL* en region1 et *SST Plateau Armor* en region2.
 
 ``` r
 names(observations) #pour connaitre les noms de colonnes
@@ -217,7 +217,7 @@ names(observations) #pour vérifier
 
     ## [1] "annee"   "mois"    "jour"    "region1" "region2"
 
-1.  Dans les données modélisées, changer le nom des trois dernières colonnes en les nommant : model1, model2 et model3.
+3.  Dans les données modélisées, changer le nom des trois dernières colonnes en les nommant : model1, model2 et model3.
 
 ``` r
 names(modelise)
@@ -232,14 +232,14 @@ names(modelise)
 
     ## [1] "jour"   "mois"   "annee"  "model1" "model2" "model3"
 
-1.  Ajouter aux deux data frame de données une colonne intitulée date résultant de la chaîne de caractères obtenue en “collant” les informations d’année, de mois, de jour, dans cet ordre.<br> **NB. La date servira de clé de jointure pour la fusion des tableaux ; il est préférable que le nom de la variable date soit identique dans les deux data frame**
+4.  Ajouter aux deux data frame de données une colonne intitulée date résultant de la chaîne de caractères obtenue en “collant” les informations d’année, de mois, de jour, dans cet ordre.<br> **NB. La date servira de clé de jointure pour la fusion des tableaux ; il est préférable que le nom de la variable date soit identique dans les deux data frame**
 
 ``` r
 modelise$date <- paste(modelise$jour, modelise$mois, modelise$annee, sep = "/")
 observations$date <- paste(observations$jour, observations$mois, observations$annee, sep = "/")
 ```
 
-1.  Dans chaque data frame créer une variable intitulée saison, à 4 modalités,
+5.  Dans chaque data frame créer une variable intitulée saison, à 4 modalités,
     <ul>
     <li>
     H associée aux mois de décembre, janvier et février
@@ -295,7 +295,7 @@ B %in% A
 
     ##  [1]  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
 
-1.  Déterminer le nombre de lignes dans chacun des deux tableaux. Utiliser l’opérateur défini en question précédente pour déterminer le nombre de dates communes dans les deux tableaux.
+2.  Déterminer le nombre de lignes dans chacun des deux tableaux. Utiliser l’opérateur défini en question précédente pour déterminer le nombre de dates communes dans les deux tableaux.
 
 ``` r
 nrow(modelise) #nombre de lignes dans modelise
@@ -325,16 +325,16 @@ table(observations$date %in% modelise$date)
     ## FALSE  TRUE 
     ##  2920  7300
 
-1.  Faire fusionner les deux tableaux dans un tableau résultat appelé **tab.merge** en utilisant date comme clé de jointure. Assurez-vous que le nombre de lignes est bien celui attendu.
+3.  Faire fusionner les deux tableaux dans un tableau résultat appelé **tab.merge** en utilisant date comme clé de jointure. Assurez-vous que le nombre de lignes est bien celui attendu.
 
 ``` r
 tab.merge <- merge(modelise,observations[,-c(1:3,7)],by="date")
 # [,-c(1:3,7)] supprime les redondances des trois premières colonnes (jours, mois, années) et de la septième (saison)
 ```
 
-1.  Identifier quelques lignes des deux tableaux initiaux qui doivent être présentes dans le tableau fusionné. En revenant aux données, vérifier, sur quelques individus, que le tableau fusionné a pris les bonnes informations.
+4.  Identifier quelques lignes des deux tableaux initiaux qui doivent être présentes dans le tableau fusionné. En revenant aux données, vérifier, sur quelques individus, que le tableau fusionné a pris les bonnes informations.
 
-2.  Certaines colonnes du tableau fusionné sont redondantes : vérifiez-le puis supprimez les redondances.
+5.  Certaines colonnes du tableau fusionné sont redondantes : vérifiez-le puis supprimez les redondances.
 
 ``` r
 #Cette correction a été faite à la question 3
@@ -356,7 +356,7 @@ boxplot(tab.merge$model1, tab.merge$model2, tab.merge$model3,
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-21-1.png)
 
-1.  Présenter les boxplots des 3 variables modélisées, saison par saison.
+2.  Présenter les boxplots des 3 variables modélisées, saison par saison.
 
 ``` r
 boxplot(model1~saison, data = tab.merge, ylab = "température") # pour le 1er modèle
@@ -364,7 +364,7 @@ boxplot(model1~saison, data = tab.merge, ylab = "température") # pour le 1er mo
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-22-1.png)
 
-1.  Présenter les boxplots des 3 variables modélisées, mois par mois.
+3.  Présenter les boxplots des 3 variables modélisées, mois par mois.
 
 ``` r
 boxplot(model1~mois, data = tab.merge, ylab = "température") # pour le 1er modèle
@@ -372,7 +372,7 @@ boxplot(model1~mois, data = tab.merge, ylab = "température") # pour le 1er mod�
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-23-1.png)
 
-1.  Calculer les résumés numériques classiques des variables modélisées toutes dates confondues.
+4.  Calculer les résumés numériques classiques des variables modélisées toutes dates confondues.
 
 ``` r
 summary(tab.merge$model1) # pour le 1er modèle
@@ -381,7 +381,7 @@ summary(tab.merge$model1) # pour le 1er modèle
     ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     ##   8.755  10.400  12.358  13.021  15.597  20.211
 
-1.  Calculer les résumés numériques classiques des variables modélisées saison par saison.
+5.  Calculer les résumés numériques classiques des variables modélisées saison par saison.
 
 ``` r
 #Méthode 1 _______by() Saison
@@ -404,7 +404,7 @@ by(tab.merge$model1, tab.merge$saison, summary) # pour le 1er modèle
     ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     ##   8.755   9.663  10.134  10.419  10.919  14.064
 
-1.  Calculer les résumés numériques classiques des variables modélisées mois par mois.
+6.  Calculer les résumés numériques classiques des variables modélisées mois par mois.
 
 ``` r
 #Méthode 2 _______tapply() summary par mois
@@ -459,8 +459,10 @@ tapply(tab.merge$model1, tab.merge$mois, summary) # pour le 1er modèle
     ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     ##   10.53   11.16   11.47   11.59   11.91   13.32
 
-3. **Traitement de valeurs manquantes : données bebe**
-======================================================
+
+
+## 3. **Traitement de valeurs manquantes : données bebe**
+
 
 Le jeu de données **bebe.txt** renseigne des variables mesurées dans une maternité, les individus sont ici les naissances (ou les bébés). Certaines données ne sont pas renseignées. Il s’agit dans cet exercice de repérer les individus pour lesquels au moins une variable n’est pas renseignée dans le but d’éliminer ces individus avant analyse.
 
@@ -473,7 +475,7 @@ Le jeu de données **bebe.txt** renseigne des variables mesurées dans une mater
 bebe <- read.csv("bebe.txt", sep=";")
 ```
 
-1.  Calculer le résumé des données. Quelles informations donne la fonction **summary()** quant aux valeurs manquantes ?
+2.  Calculer le résumé des données. Quelles informations donne la fonction **summary()** quant aux valeurs manquantes ?
 
 ``` r
 summary(bebe) # summary() donne le nombre de NA
@@ -528,7 +530,7 @@ summary(bebe) # summary() donne le nombre de NA
     ##  NA's      :  9              Max.   :60.000   Max.   :48.70             
     ##                              NA's   :1        NA's   :69
 
-1.  Paramétrer convenablement l’appel de la fonction **mean()** de sorte à calculer la taille moyenne d’un bébé.
+3.  Paramétrer convenablement l’appel de la fonction **mean()** de sorte à calculer la taille moyenne d’un bébé.
 
 ``` r
 mean(bebe$TailleBB, na.rm = T) # sans considérer les NA ou
@@ -561,14 +563,14 @@ sum(is.na(bebe)) # somme des TRUE
 
     ## [1] 471
 
-1.  En combinant les fonctions **is.na()**, **which()** *(préciser le paramètre arr.ind)* et **unique()**, déterminer les individus non totalement renseignés.
+2.  En combinant les fonctions **is.na()**, **which()** *(préciser le paramètre arr.ind)* et **unique()**, déterminer les individus non totalement renseignés.
 
 ``` r
 #Méthode 1____________ partie de data frame
 manque <- unique( bebe [which(is.na(bebe), arr.ind = T) [,1] ,] )
 ```
 
-1.  Retrouver le résultat précédent au moyen d’une boucle sur les colonnes du tableau.
+3.  Retrouver le résultat précédent au moyen d’une boucle sur les colonnes du tableau.
 
 ``` r
 #Méthode 2____________ boucle for et conditionnelle if
@@ -592,14 +594,14 @@ Etant donné le grand nombre d’individus concernés, les enlever serait sans t
 newBebe <- bebe[ - as.integer(row.names(manque)),]
 ```
 
-1.  Obtenir le même tableau de manière directe en utilisant la fonction **na.omit()**.
+2.  Obtenir le même tableau de manière directe en utilisant la fonction **na.omit()**.
 
 ``` r
 #Méthode 2____________ suppression des lignes contenant NA
 newBebe <- na.omit(bebe)
 ```
 
-1.  Exporter le tableau ainsi nettoyé au moyen de la fonction **write.table()**.
+3.  Exporter le tableau ainsi nettoyé au moyen de la fonction **write.table()**.
 
 ``` r
 write.table(newBebe, "newBebe.txt")
@@ -608,18 +610,14 @@ write.table(newBebe, "newBebe.txt")
 <br><br>
 
 ------------------------------------------------------------------------
-
 ------------------------------------------------------------------------
 
-**Statistique inférentielle**
-=============================
+# **Statistique inférentielle**
 
 ------------------------------------------------------------------------
-
 ------------------------------------------------------------------------
 
-4. **Simulation avec R**
-========================
+## 4. **Simulation avec R**
 
 En statistique inférentielle, on est amené à examiner les propriétés théoriques d’estimateurs (i.e. de variables aléatoires fonction des données) pour juger de leur capacité à bien estimer, dans le cadre de l’estimation paramétrique par exemple, le(s) paramètre(s) inconnu(s) de la loi postulée par le modèle. Ainsi, si on prouve qu’un estimateur a de bonnes propriétés (consistance, faible biais, faible variance...), on a une plus grande confiance en l’estimation du paramètre, estimation qui correspond à la seule réalisation de cette variable aléatoire dont on dispose.
 
@@ -692,7 +690,7 @@ hist(U, freq = F) # histogramme d'une loi uniforme d'échantillon de taille 1000
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-39-1.png)
 
-1.  Générer des nombres aléatoires en utilisant les fonctions **rpois()** puis **rexp()**.
+2.  Générer des nombres aléatoires en utilisant les fonctions **rpois()** puis **rexp()**.
 
 ``` r
 rpois(n = 10, lambda = 5) # échantillon de taille 10 d'une loi Poisson P(5)
@@ -707,11 +705,11 @@ rexp(n = 10, rate = 5) # échantillon de taille 10 d'une loi exponentielle E(5)
     ##  [1] 0.016471108 0.066240848 0.331300897 0.458191812 0.073373639
     ##  [6] 0.011742616 0.250503151 0.030362501 0.009474237 0.073639105
 
-1.  Générer n = 1000 nombres aléatoires suivant une loi *N*(0, 1).<br>
+3.  Générer n = 1000 nombres aléatoires suivant une loi *N*(0, 1).<br>
 
 <!-- -->
 
-1.  Représenter un histogramme de la distribution des valeurs.
+4.  Représenter un histogramme de la distribution des valeurs.
 
 ``` r
 valeurs <- rnorm(1000, 0, 1)
@@ -720,7 +718,7 @@ hist(valeurs, freq = F, breaks = 30)
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-41-1.png)
 
-1.  Au graphe précédent, ajouter la courbe de densité de la loi *N*(0, 1) (fonctions **dnorm()** et **lines()**).
+5.  Au graphe précédent, ajouter la courbe de densité de la loi *N*(0, 1) (fonctions **dnorm()** et **lines()**).
 
 ``` r
 hist(valeurs, freq = F, breaks = 30) # Question a
@@ -732,7 +730,7 @@ lines(x,y,col="red")
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-42-1.png)
 
-1.  Représenter la fonction de répartition empirique de ces valeurs aléatoires (fonction **ecdf()**).
+6.  Représenter la fonction de répartition empirique de ces valeurs aléatoires (fonction **ecdf()**).
 
 ``` r
 Fchap <- ecdf(valeurs)
@@ -741,7 +739,7 @@ plot(x, Fchap(x), type = "l")
 
 ![](resume_rgit_files/figure-markdown_github/unnamed-chunk-43-1.png)
 
-1.  Sur le même graphe, ajouter la courbe de la fonction de répartition de la loi *N*(0, 1) (fonction **pnorm()**).
+7.  Sur le même graphe, ajouter la courbe de la fonction de répartition de la loi *N*(0, 1) (fonction **pnorm()**).
 
 ``` r
 Fchap <- ecdf(valeurs)
@@ -771,7 +769,7 @@ print(M)
 
     ## [1] -0.04425004 -0.21311029 -0.08303914 -0.21262615  0.04456302
 
-1.  En combinant les fonctions **matrix()** et **apply()**.<br> *valeurs* est un tirage d'échantillon de taille *K* \* *n*<br> *M* est une matrice où chaque ligne correspond à un échantillon. <br> On calcule la moyenne par ligne de la matrice.
+2.  En combinant les fonctions **matrix()** et **apply()**.<br> *valeurs* est un tirage d'échantillon de taille *K* \* *n*<br> *M* est une matrice où chaque ligne correspond à un échantillon. <br> On calcule la moyenne par ligne de la matrice.
 
 ``` r
 valeurs <- rnorm(K*n, 0,1)
