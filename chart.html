@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <title>My Chart</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        let barChart = new Chart(myChart, {
+            type: 'line',
+            data: {
+                labels:['Python', 'R', 'HTML'],
+                datasets:[{
+                    label:'Level',
+                    data:[5, 2, 3]
+                }]
+            },
+            options:{}
+        });
+    </script>
+</body>
+</html>
