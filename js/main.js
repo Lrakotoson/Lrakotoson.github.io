@@ -1,9 +1,10 @@
 'use strict';
-$(document).ready(function() {
-    window.onload = function () {
-    $('#preloader').fadeOut(500, function(){ $('#preloader').remove(); } );
-    }
-});
+$(window).on("load", function() {
+
+    //  //PRELOADER
+     $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+    
+}); // window load end
 
 $(document).on("ready", function() {
 
