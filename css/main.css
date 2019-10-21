@@ -258,7 +258,30 @@ nav ul li a:hover:after {
     transition: all 0.2s ease-in-out;
 }
 
+/* Home */
+section{
+    padding-top: 60px;
+}
 
+.home{
+	background-size:cover;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+	display: table;
+	z-index: 10;
+	position: center;
+}
+
+.home-content{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	z-index: 2;
+	position: relative;
+ }
+
+/* Responsive */
 @media screen and (max-width:800px){
 	.menu{
 		display: none;
