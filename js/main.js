@@ -1,12 +1,8 @@
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("nav_fixed");
-  } else {
-    header.classList.remove("nav_fixed");
-  }
-}
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= window.innerHeight) {
+        $('header').addClass('nav_fixed');
+    }
+    else {
+        $('header').removeClass('nav_fixed');
+    }
+});

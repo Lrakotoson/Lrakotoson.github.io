@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <!--External CDN-->
-    <link href="https://fonts.googleapis.com/css?family=Arvo:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Poppins:800&display=swap" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/eb81328826.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
@@ -24,8 +24,8 @@
 </head>
 
 <body>
-<div class="header" id="myHeader">
-    <h2>Loïc Rakotoson<span>.</span></h2>
+<header>
+    <h2>Loïc Rakotoson <span>.</span></h2>
     <nav>
         <ul class="navbar">
             <li><a href="#home">home</a></li>
@@ -35,7 +35,7 @@
             <li><a href="#footer">contact</a></li>
         </ul>
     </nav>
-</div>
+</header>
 <div class="container">
     <div class="home" id="home">Home</div>
     <div id="picture">Picture</div>
@@ -115,20 +115,6 @@
     <div id="path">Path</div>
     <div id="footer">Footer</div>
 </div>
-<script>
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("nav_fixed");
-  } else {
-    header.classList.remove("nav_fixed");
-  }
-}
-</script>
 </body>
 
 </html>
