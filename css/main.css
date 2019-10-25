@@ -24,39 +24,90 @@ Lrakotoson.github.io
 	padding: 0;
 }
 
+#myHeader{
+	position: relative;
+	color:#edf0f1;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 5%;
+	z-index: 1;
+}
+
+.navbar{
+	list-style: none;
+}
+
+.navbar li{
+	display: inline-block;
+	padding: 0 30px;
+}
+
+.navbar li a{
+	text-decoration: none;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	transition: 0.3s all ease;
+	padding: 14px 0;
+}
+
+.navbar li a:before{
+	content:'';
+	width: 60px;
+	position: absolute;
+	border-bottom: 5px solid black;
+	bottom: 0;
+	right:350px;
+	transition: 0.3s all ease;
+}
+
+.navbar li a:hover:before{
+	right: 0;
+}
+
+.nav_fixed{
+	position: fixed;
+	width: 100%;
+}
+
 .container{
+	position: absolute;
+	top: 0;
 	display: grid;
-	grid-template-columns: auto auto auto;;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 100vh;
 }
 
 #home{
 	grid-column: span 3;
 	background-color: aqua;
 	text-align: center;
-	height: 100vh;
 }
 
 #picture{
 	background-color: blue;
-	height: calc(100vh - 150px);
 }
 
 #about{
 	grid-column: span 2;
 	background-color: brown;
-	height: calc(100vh - 150px);
+}
+
+#skills{
+	grid-auto-columns: span 3;
+	background-color: darkgoldenrod;
 }
 
 #portfolio{
 	grid-column: span 3;
 	background-color: blueviolet;
-	height: calc(80vh - 150px);
 }
 
 #path{
 	grid-column: span 3;
 	background-color: greenyellow;
-	height: calc(80vh - 150px);
 }
 
 #footer{
