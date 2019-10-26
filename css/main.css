@@ -102,12 +102,10 @@ header h2>span{
 	position: absolute;
 	top: 0;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 100vh;
 }
 
 #home{
-	grid-column: span 3;
 	background-color: aqua;
 	text-align: center;
 }
@@ -117,26 +115,77 @@ header h2>span{
 }
 
 #about{
-	grid-column: span 2;
 	background-color: brown;
 }
 
 #skills{
-	grid-auto-columns: span 3;
 	background-color: darkgoldenrod;
 }
 
 #portfolio{
-	grid-column: span 3;
 	background-color: blueviolet;
 }
 
 #path{
-	grid-column: span 3;
 	background-color: greenyellow;
 }
 
 #footer{
-	grid-column: span 3;
 	background-color: green;
+}
+
+/* Mobile */
+@media (max-width: 480px){
+	/* Grid */
+	.container{
+		grid-template-rows: repeat(2, 100vh);
+	}
+
+	/* Nav bar */
+	.navbar{
+		display: none;
+	}
+}
+
+/* Desktop */
+@media (min-width: 1025px){
+	/* Grid */
+	.container{
+		grid-template-columns: repeat(3, 1fr);
+		width: 970px;
+		left:0;
+		right:0;
+		margin: 0 auto;
+		justify-items: center;
+	}
+
+	.container>div{
+		width:100%;
+		grid-column: span 3;
+	}
+
+	#home{
+		width: 100vw;
+	}
+
+	#picture{
+		grid-column: span 1;
+	}
+
+	#about{
+		grid-column: span 2;
+	}
+
+	#skills>div{
+		display: inline-block;
+	}
+
+	.tools{
+		width:50%;
+	}
+
+	.expertise{
+		max-width:49%;
+	}
+
 }
