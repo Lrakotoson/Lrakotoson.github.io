@@ -18,272 +18,201 @@ Lrakotoson.github.io
 
 
 /*------------------------ 1 Body and Core Css ------------------------*/
-body{
-    font-family: 'Arvo', sans-serif;
-	background: #2c3e50;
+*{
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-/* Preloader */
-#preloader{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	width: 60px;
-	height: 60px;
+body{
+	font-family: 'Arvo', serif;
 }
 
-.box{
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	background: #f1c40f;
+.nav_fixed{
+	position: fixed;
+	width: 100%;
+	background-color: #2c3e50;
+	box-shadow: 0 2px 8px #95a5a6;
+	transition: 0.7s all ease;
 }
 
-.box:nth-child(1){
-	animation: a1 2s infinite linear;
-}
-
-.box:nth-child(2){
-	animation: a2 2s infinite linear;
-}
-
-@keyframes a1 {
-	0%{
-		top: 0;
-		left: 0;
-		width: 30px;
-		height: 30px;
-	}
-	12.5%{
-		top: 0;
-		left: 0;
-		width: 60px;
-		height: 30px;
-	}
-	25%{
-		top: 0;
-		left: 0;
-		width: 60px;
-		height: 30px;
-	}
-	37.5%{
-		top: 0;
-		left: 30px;
-		width: 30px;
-		height: 30px;
-	}
-	50%{
-		top: 0;
-		left: 30px;
-		width: 30px;
-		height: 30px;
-	}
-	62.5%{
-		top: 0;
-		left: 30px;
-		width: 30px;
-		height: 60px;
-	}
-	75%{
-		top: 0;
-		left: 30px;
-		width: 30px;
-		height: 60px;
-	}
-	87.5%{
-		top: 30px;
-		left: 30px;
-		width: 30px;
-		height: 30px;
-	}
-	100%{
-		top: 30px;
-		left: 30px;
-		width: 30px;
-		height: 30px;
-	}
-}
-
-@keyframes a2 {
-	0%{
-		right: 0;
-		bottom: 0;
-		width: 30px;
-		height: 30px;
-	}
-	12.5%{
-		right: 0;
-		bottom: 0;
-		width: 30px;
-		height: 30px;
-	}
-	25%{
-		right: 0;
-		bottom: 0;
-		width: 60px;
-		height: 30px;
-	}
-	37.5%{
-		right: 0;
-		bottom: 0;
-		width: 60px;
-		height: 30px;
-	}
-	50%{
-		right: 30px;
-		bottom: 0;
-		width: 30px;
-		height: 30px;
-	}
-	62.5%{
-		right: 30px;
-		bottom: 0;
-		width: 30px;
-		height: 30px;
-	}
-	75%{
-		right: 30px;
-		bottom: 0;
-		width: 30px;
-		height: 60px;
-	}
-	87.5%{
-		right: 30px;
-		bottom: 0;
-		width: 30px;
-		height: 60px;
-	}
-	100%{
-		right: 30px;
-		bottom: 30px;
-		width: 30px;
-		height: 30px;
-	}
-}
-
-.no-js #preloader {
-    display: none;
-}
-
-/* Header */
 header{
-	position: absolute;
-	transition: all ease 0.3s;
-	z-index:11;
-	width: 100%;
-	color: #fff;
-}
-
-.nav-fixed{
-    background: #273747;
-    border: solid 1px #273747;
-    box-shadow: none;
-    position: fixed;
-    transition: all ease 0.3s;
-    -webkit-box-shadow: -5px 10px 12px -10px rgba(189, 195, 199,0.67);
-    -moz-box-shadow: -5px 10px 12px -10px rgba(189, 195, 199,0.67);
-}
-.nav-fixed ul li a{
-    color: #fff;
-}
-
-.nav-fixed .logo{
-    color: #fff;
-}
-
-.logo{
-	float: left;
-	padding: 0 20px;
-	text-transform: uppercase;
-}
-
-.logo span{
-	font-size: 50px;
-	color:#f1c40f;
-}
-
-.menu{
-	float: right;
-	margin-bottom: 0;
-	padding: 0;
-}
-
-nav ul li{
-	float: left;
-	list-style: none;
 	position: relative;
-	margin-right: 3px;
+	background-image: linear-gradient(to top, rgba(44, 62, 80, 0), rgba(44, 62, 80, 0.5));
+	color:#edf0f1;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 5%;
+	z-index: 1;
+	transition: 0.7s all ease;
 }
 
-nav ul li a{
+header h2{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 800;
 	color:#fff;
-	line-height: 72px;
-	display: block;
-	text-decoration: none !important;
-	padding: 0 7px;
-	text-transform: uppercase;
+	cursor: pointer;
 }
 
-.menu a:hover{
+header h2>span{
 	color:#f1c40f;
-	transition: 0.5s;
+	font-size:50px;
 }
 
-.selected:after {
-	content: '';
-	display: block;
-	margin: auto;
-	height: 2px;
-	width: 100%;
-	transition: width .5s ease, background-color .5s ease;
+.navbar{
+	list-style: none;
 }
 
-nav ul li a:after {
-	height: 2px;
-    width: 0;
-    position: absolute;
-    margin: 0 auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
-    transition: all 0.2s ease-in-out;
+.navbar li{
+	display: inline-block;
+	padding: 0 20px;
 }
 
-nav ul li a:hover:after {
-	width: 100%;
-    transition: all 0.2s ease-in-out;
-}
-
-/* Home */
-section{
-    padding-top: 60px;
-}
-
-.home{
-	background-size:cover;
-	height: 100%;
-	overflow: hidden;
-	width: 100%;
-	display: table;
-	z-index: 10;
-	position: center;
-}
-
-.home-content{
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	z-index: 2;
+.navbar li a{
+	text-decoration: none;
+	color: #fff;
 	position: relative;
- }
+	display: block;
+	overflow: hidden;
+	transition: 0.3s all ease;
+	padding: 14px 0;
+}
 
-/* Responsive */
-@media screen and (max-width:800px){
-	.menu{
+.navbar li a:hover{
+	color:#f1c40f;
+}
+
+.navbar li a:before{
+	content:'';
+	width: 60px;
+	position: absolute;
+	border-bottom: 5px solid #f1c40f;
+	bottom: 0;
+	right:350px;
+	transition: 0.3s all ease;
+}
+
+.navbar li a:hover:before{
+	right: 0;
+}
+
+#home{
+	position: absolute;
+	top: 0;
+	background-color: aqua;
+	text-align: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.container{
+	position: absolute;
+	top: calc(100vh + 20px);
+	display: grid;
+	row-gap: 20px;
+}
+
+#picture{
+	background-color: blue;
+}
+
+#about{
+	background-color: brown;
+}
+
+#skills{
+	background-color: darkgoldenrod;
+}
+
+#portfolio{
+	background-color: blueviolet;
+}
+
+#path{
+	background-color: greenyellow;
+}
+
+#footer{
+	background-color: green;
+}
+
+/* Mobile */
+@media (max-width: 480px){
+
+}
+
+/* Tablet */
+@media (max-width: 900px){
+	/* Grid */
+	.container{
+		grid-template-rows: 100vh;
+	}
+
+	/* Nav bar */
+	header{
+		justify-content: center;
+	}
+	.navbar{
 		display: none;
 	}
+}
+
+/* Desktop */
+@media (min-width: 901px){
+	/* Grid */
+	.container{
+		grid-template-columns: repeat(3, 1fr);
+		width: 970px;
+		top: calc(100vh + 60px);
+		left:0;
+		right:0;
+		margin: 0 auto;
+		justify-items: center;
+		row-gap: 60px;
+	}
+
+	.container > div{
+		width: 100%;
+		grid-column: span 3;
+	}
+
+	#picture{
+		grid-column: span 1;
+		height: 440px;
+	}
+
+	#about{
+		grid-column: span 2;
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+
+	#skills > div{
+		display: inline-block;
+	}
+
+	.tools{
+		width:50%;
+	}
+
+	.expertise{
+		max-width:49%;
+	}
+
+}
+
+/* Large Screen */
+@media (min-width: 1280px){
+	/* Grid */
+	.container{
+		width: 1170px;
+	}
+
+	#picture{
+		height: 540px;
+	}
+
 }
