@@ -98,16 +98,19 @@ header h2>span{
 	right: 0;
 }
 
-.container{
+#home{
 	position: absolute;
 	top: 0;
-	display: grid;
-	grid-template-rows: 100vh;
-}
-
-#home{
 	background-color: aqua;
 	text-align: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.container{
+	position: absolute;
+	top: 100vh;
+	display: grid;
 }
 
 #picture{
@@ -138,7 +141,7 @@ header h2>span{
 @media (max-width: 480px){
 	/* Grid */
 	.container{
-		grid-template-rows: repeat(2, 100vh);
+		grid-template-rows: repeat(1, 100vh);
 	}
 
 	/* Nav bar */
@@ -159,13 +162,9 @@ header h2>span{
 		justify-items: center;
 	}
 
-	.container>div{
-		width:100%;
+	.container > div{
+		width: 100%;
 		grid-column: span 3;
-	}
-
-	#home{
-		width: 100vw;
 	}
 
 	#picture{
@@ -176,7 +175,7 @@ header h2>span{
 		grid-column: span 2;
 	}
 
-	#skills>div{
+	#skills > div{
 		display: inline-block;
 	}
 
