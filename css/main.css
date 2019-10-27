@@ -109,8 +109,9 @@ header h2>span{
 
 .container{
 	position: absolute;
-	top: 100vh;
+	top: calc(100vh + 20px);
 	display: grid;
+	row-gap: 20px;
 }
 
 #picture{
@@ -139,27 +140,37 @@ header h2>span{
 
 /* Mobile */
 @media (max-width: 480px){
+
+}
+
+/* Tablet */
+@media (max-width: 900px){
 	/* Grid */
 	.container{
-		grid-template-rows: repeat(1, 100vh);
+		grid-template-rows: 100vh;
 	}
 
 	/* Nav bar */
+	header{
+		justify-content: center;
+	}
 	.navbar{
 		display: none;
 	}
 }
 
 /* Desktop */
-@media (min-width: 1025px){
+@media (min-width: 901px){
 	/* Grid */
 	.container{
 		grid-template-columns: repeat(3, 1fr);
 		width: 970px;
+		top: calc(100vh + 60px);
 		left:0;
 		right:0;
 		margin: 0 auto;
 		justify-items: center;
+		row-gap: 60px;
 	}
 
 	.container > div{
@@ -169,10 +180,14 @@ header h2>span{
 
 	#picture{
 		grid-column: span 1;
+		height: 440px;
 	}
 
 	#about{
 		grid-column: span 2;
+		height: 100%;
+		display: flex;
+		align-items: center;
 	}
 
 	#skills > div{
@@ -185,6 +200,19 @@ header h2>span{
 
 	.expertise{
 		max-width:49%;
+	}
+
+}
+
+/* Large Screen */
+@media (min-width: 1280px){
+	/* Grid */
+	.container{
+		width: 1170px;
+	}
+
+	#picture{
+		height: 540px;
 	}
 
 }
