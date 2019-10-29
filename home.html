@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Poppins:800&display=swap" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/eb81328826.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
     <script src="js/main.js"></script>
     
     <!-- Google verification -->
@@ -36,7 +37,29 @@
         </ul>
     </nav>
 </header>
-<div class="home" id="home">Home</div>
+<div class="home" id="home">
+        <div id="player" class="player"
+            data-property="{
+                videoURL:'https://youtu.be/4EuY3wQEEEc',
+                containment:'self',
+                showControls:false,
+                startAt:0,
+                mute:true,
+                autoPlay:true,
+                loop:true,
+                opacity:1,
+                showYTLogo:false,
+                optimizeDisplay:true
+            }">
+        </div>
+        <script>
+            jQuery(document).ready(function () {
+                $(function () {
+                    jQuery('#player').YTPlayer();
+                });
+            });
+        </script>
+</div>
 <div class="container">
     <div id="picture">Picture</div>
     <div id="about">        
