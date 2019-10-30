@@ -120,7 +120,7 @@ header h2>span{
 	font-size:65px;
 }
 
-.typed>span{
+.typed span{
 	color:#f1c40f;
 }
 
@@ -175,7 +175,11 @@ header h2>span{
 }
 
 #picture{
-	background-color: blue;
+	text-align: center;
+}
+
+#picture img{
+	width: 100%;
 }
 
 #about{
@@ -212,11 +216,6 @@ header h2>span{
 
 /* Tablet */
 @media (max-width: 970px){
-	/* Grid */
-	.container{
-		grid-template-rows: 100vh;
-	}
-
 	/* Nav bar */
 	header{
 		justify-content: center;
@@ -261,7 +260,6 @@ header h2>span{
 
 	#picture{
 		grid-column: span 1;
-		height: 440px;
 	}
 
 	#about{
@@ -291,9 +289,4 @@ header h2>span{
 	.container{
 		width: 1170px;
 	}
-
-	#picture{
-		height: 540px;
-	}
-
 }
