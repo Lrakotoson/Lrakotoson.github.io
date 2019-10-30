@@ -45,25 +45,27 @@ header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 5%;
+	padding: 10px 1%;
 	z-index: 1;
 	transition: 0.7s all ease;
 }
 
 header h2{
 	font-family: 'Poppins', sans-serif;
-	font-weight: 800;
+	font-weight: bold;
+	font-size: 20px;
 	color:#fff;
 	cursor: pointer;
 }
 
 header h2>span{
 	color:#f1c40f;
-	font-size:50px;
+	font-size:40px;
 }
 
 .navbar{
 	list-style: none;
+	font-size:13px;
 }
 
 .navbar li{
@@ -89,7 +91,7 @@ header h2>span{
 	content:'';
 	width: 60px;
 	position: absolute;
-	border-bottom: 5px solid #f1c40f;
+	border-bottom: 3px solid #f1c40f;
 	bottom: 0;
 	right:350px;
 	transition: 0.3s all ease;
@@ -107,7 +109,59 @@ header h2>span{
 	width: 100%;
 }
 
-.player{
+.typed{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size:65px;
+}
+
+.typed>span{
+	color:#f1c40f;
+}
+
+.social{
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    display: block;
+    padding: 20px 1%;
+    text-align: center;
+}
+
+
+.social li{
+	margin-top: 20px;
+	list-style: none;
+}
+
+.social a{
+    color: #fff;
+    font-size: 15px;
+    transition: all ease 0.3s;
+    opacity: 1;
+}
+
+
+.social a:hover{
+    transition: all ease 0.3s;
+    opacity: 0.5;
+}
+
+
+.video_section{
+	position: absolute;
+	z-index: -1;
+	top:0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+}
+#player{
 	height: 100%;
 	width: 100%;
 	background: rgba(44, 62, 80, 0.5);
@@ -144,6 +198,12 @@ header h2>span{
 	background-color: green;
 }
 
+/* 
+   ==================================
+  || --------- Responsive --------- ||
+   ==================================
+ */
+
 /* Mobile */
 @media (max-width: 480px){
 
@@ -151,7 +211,7 @@ header h2>span{
 }
 
 /* Tablet */
-@media (max-width: 900px){
+@media (max-width: 970px){
 	/* Grid */
 	.container{
 		grid-template-rows: 100vh;
@@ -171,13 +231,17 @@ header h2>span{
 		background-size: 100% auto;
 	}
 
-	.player{
+	.video_section{
 		display: none;
+	}
+
+	.typed{
+		font-size:100%;
 	}
 }
 
 /* Desktop */
-@media (min-width: 901px){
+@media (min-width: 971px){
 	/* Grid */
 	.container{
 		grid-template-columns: repeat(3, 1fr);

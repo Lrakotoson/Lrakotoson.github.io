@@ -18,6 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/eb81328826.js" crossorigin="anonymous"></script>
     <script src="js/jquery.mb.YTPlayer.js"></script>
+    <script src="js/typed.js"></script>
     <script src="js/main.js"></script>
     
     <!-- Google verification -->
@@ -37,10 +38,34 @@
         </ul>
     </nav>
 </header>
+
 <div class="home" id="home">
-        <div id="player" class="player"
+    <h2><span class="typed"></span></h2>
+    <script>
+        var typed = new Typed('.typed', {
+            strings: [
+                "Hello world,<br>I'm Loïc Rakotoson",
+                "I'm a <span>Data Science</span> student<br>based in Rennes",
+                "I'd like to chat<br>contact@loicrakotoson.com",
+            ],
+            startDelay: 1000,
+            typeSpeed: 60,
+            backSpeed: 20,
+            smartBackspace: false,
+            backDelay: 3000,
+            loop: true,
+            cursorChar: null,
+        });
+    </script>
+    <ul class="social">
+        <li><a href="https://github.com/Lrakotoson" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/loicrakotoson/?locale=en_US" target="_blank"><i class="fab fa-linkedin-in fa-3x"
+                    aria-hidden="true"></i></a></li>
+    </ul>
+    <div class="video_section">
+        <div id="player"
             data-property="{
-                videoURL:'https://youtu.be/4EuY3wQEEEc',
+                videoURL:'https://youtu.be/MU-QLi1DkRY',
                 containment:'self',
                 showControls:false,
                 startAt:0,
@@ -59,6 +84,7 @@
                 });
             });
         </script>
+    </div>
 </div>
 <div class="container">
     <div id="picture">Picture</div>
