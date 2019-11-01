@@ -176,6 +176,8 @@ header h2>span{
 	font-size: 15px;
 }
 
+/* About */
+
 #picture{
 	display: flex;
 	align-items: center;
@@ -251,8 +253,22 @@ header h2>span{
 	width: 100%;
 }
 
-#portfolio{
-	background-color: blueviolet;
+/* Portfolio */
+
+.gallery{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 2% 0;
+}
+
+.gallery_item{
+	position: relative;
+	display: inline-block;
+}
+
+.gallery_item img{
+	width: 100%;
 }
 
 #path{
@@ -321,6 +337,14 @@ header h2>span{
 	.expertise img{
 		padding-top: 5%;
 	}
+
+	.gallery_item{
+		width: 280px;
+	}
+
+	.overlay{
+		display: none;
+	}
 }
 
 /* Desktop */
@@ -370,6 +394,45 @@ header h2>span{
 		padding-left: 2%;
 	}
 
+	.gallery_item{
+		width: 210px;
+	}
+
+	.overlay{
+		position: absolute;
+		transition: all 0.3s ease;
+		opacity: 0;
+		background: #222f3d;
+		height: 0;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+	}
+
+	.description{
+		color: #ecf0f1;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.description p{
+		text-align: center;
+		padding-bottom: 10px;
+	}
+
+	.description a{
+		text-decoration: none;
+		color: #ecf0f1;
+		text-align: center;
+	}
+
+	.gallery_item:hover .overlay{
+		opacity: 0.9;
+		height: 100%;
+	}
+
 }
 
 /* Large Screen */
@@ -377,5 +440,9 @@ header h2>span{
 	/* Grid */
 	.container{
 		width: 1170px;
+	}
+
+	.gallery_item{
+		width: 350px;
 	}
 }
