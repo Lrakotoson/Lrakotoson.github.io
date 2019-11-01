@@ -273,6 +273,7 @@ header h2>span{
 
 #path{
 	background-color: greenyellow;
+	display: none;
 }
 
 #footer{
