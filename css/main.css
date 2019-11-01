@@ -185,13 +185,17 @@ header h2>span{
 	width: 100%;
 }
 
-#about h2{
+#about h2, .section_title{
 	display: table;
 	color: #fff;
 	padding-top: 20px;
 	text-transform: uppercase;
 	border-top: 5px solid #f1c40f;
 	font-size: 18px;
+}
+
+.section_title{
+	margin: auto;
 }
 
 #about p{
@@ -237,13 +241,14 @@ header h2>span{
 	transform: scaleX(1);
 }
 
-.section_title{
-	color:#fff;
+#skills h3{
 	text-transform: uppercase;
+	text-align: center;
+	padding: 20px 0;
 }
 
-#skills{
-	background-color: darkgoldenrod;
+.tools img, .expertise img{
+	width: 100%;
 }
 
 #portfolio{
@@ -271,7 +276,7 @@ header h2>span{
 		line-height: auto;
 	}
 
-	#about h2{
+	#about h2, .section_title{
 		font-size: 16px;
 	}
 }
@@ -312,6 +317,10 @@ header h2>span{
 	#about h2{
 		margin: auto;
 	}
+
+	.expertise img{
+		padding-top: 5%;
+	}
 }
 
 /* Desktop */
@@ -348,15 +357,17 @@ header h2>span{
 	}
 
 	#skills > div{
-		display: inline-block;
+		display: flex;
 	}
 
 	.tools{
 		width:50%;
+		padding-right: 3%;
 	}
 
 	.expertise{
 		max-width:49%;
+		padding-left: 2%;
 	}
 
 }
