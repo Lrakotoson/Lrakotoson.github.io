@@ -326,8 +326,12 @@ header h2>span{
 
 /* Mobile */
 @media (max-width: 480px){
+	.social li{
+		padding: 5px 10px;
+	}
+
 	#about p{
-		font-size: 12px;
+		font-size: 13px;
 		line-height: auto;
 	}
 
@@ -338,6 +342,10 @@ header h2>span{
 	.contact_info{
 		flex-direction: column;
 		font-size: 40px;
+	}
+
+	#footer a{
+		padding: 0 50px;
 	}
 }
 
