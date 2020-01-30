@@ -347,6 +347,12 @@ header h2>span{
 	#footer a{
 		padding: 0 50px;
 	}
+
+	.gallery{	
+align-items: center;
+		width: calc(100vw);
+		flex-direction: column;
+	}
 }
 
 /* Tablet */
