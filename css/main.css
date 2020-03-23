@@ -258,6 +258,7 @@ header h2>span{
 .gallery{
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
 	padding: 2% 0;
 }
@@ -502,5 +503,24 @@ align-items: center;
 
 	.gallery_item{
 		width: 350px;
+	}
+}
+
+/* IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.contact_info, .gallery{
+		justify-content: space-around;
+	}
+}
+
+@supports (-ms-accelerator:true) {
+	.contact_info, .gallery{
+		justify-content: space-around;
+	}
+}
+
+@supports (-ms-ime-align: auto) {
+	.contact_info, .gallery{
+		justify-content: space-around;
 	}
 }
