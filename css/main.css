@@ -28,6 +28,7 @@ body{
 	font-family: 'Arvo', serif;
 	background-color: #2c3e50;
 	color: #bdc3c7;
+	overflow-x: hidden;
 }
 
 .nav_fixed{
@@ -119,6 +120,7 @@ header h2>span{
 	text-align: center;
 	color: #fff;
 	font-size:65px;
+	z-index: 1;
 }
 
 .typed span{
@@ -165,7 +167,12 @@ header h2>span{
 #player{
 	height: 100%;
 	width: 100%;
-	background: rgba(44, 62, 80, 0.5);
+	background: rgba(44, 62, 80, 0.5) no-repeat center center fixed;
+	background-image: url("../images/office-background.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .container{
@@ -266,6 +273,8 @@ header h2>span{
 .gallery_item{
 	position: relative;
 	display: inline-block;
+	margin: 1% 0;
+
 }
 
 .gallery_item img{
@@ -350,7 +359,7 @@ header h2>span{
 	}
 
 	.gallery{	
-align-items: center;
+		align-items: center;
 		width: calc(100vw);
 		flex-direction: column;
 	}
@@ -368,8 +377,12 @@ align-items: center;
 
 	/* Home background */
 	#home{
-		background: center no-repeat url("../images/background_image.jpg");
-		background-size: 100% auto;
+		background: rgba(44, 62, 80, 0.5) no-repeat center center fixed;
+		background-image: url("../images/office-background.png");
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 
 	.video_section{
@@ -383,6 +396,10 @@ align-items: center;
 	/* Grid */
 	#picture img{
 		padding: 0 5%;
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+  		max-width: 538px;
 	}
 
 	.resume{
@@ -393,8 +410,19 @@ align-items: center;
 		margin: auto;
 	}
 
+	.tools img{
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+		max-width: 540px;
+	}
+
 	.expertise img{
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
 		padding-top: 5%;
+		max-width: 540px;
 	}
 
 	.gallery_item{
